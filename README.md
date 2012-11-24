@@ -1,2 +1,1 @@
-ncolour
-=======
+ncolour is a two player web 'card' game developed in 7 hours for #sehackathon 8.
