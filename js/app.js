@@ -90,7 +90,7 @@ var NColourModel = function() {
 			this.result('You Win');
 		}
 		else if (this.me.points() < this.you.points()) {
-			this.result('You Loose');
+			this.result('You Lose');
 		}
 		else {
 			this.result('Tie Game');
