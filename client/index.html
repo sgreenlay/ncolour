@@ -1,0 +1,67 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>NColor - DEV</title>
+	<link href='http://fonts.googleapis.com/css?family=Strait' rel='stylesheet' type='text/css'>
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div id="content">
+		<div id="player1" class="player playerspace">
+			<div id="cardspace">
+				<ul id="colours" data-bind="foreach:colours">
+					<li data-bind="class:'colour' + $data"></li>
+				</ul>
+				<ul id="numbers" data-bind="foreach:me.cardCounts">
+					<li>
+						<p class="points" data-bind="text:'+' + pointsAtIndex($index())"></p>
+						<a href="#" data-bind="attr:{href:'javascript:play(' + $index() + ')'}, text:$data"></a>
+					</li>
+				</ul>
+			</div>
+			<div class="label" data-bind="text:me.points() + ' pts'"></div>
+		</div>
+		<div id="currentround">
+			<div id="player1" class="round playerspace">
+				<div id="truth" data-bind="class:'colour' + colourAtIndex(me.truth())">
+					<a href="javascript:play_truth('Blank')"></a>	
+				</div>
+				<div id="lie" data-bind="class:'colour' + colourAtIndex(me.lie())">
+					<a href="javascript:play_lie('Blank')"></a>	
+				</div>
+			</div>
+			<div id="player2" class="round playerspace">
+				<div id="truth" data-bind="class:'colour' + colourAtIndex(you.truth())"></div>
+				<div id="lie" data-bind="class:'colour' + colourAtIndex(you.lie())"></div>
+			</div>
+		</div>
+		<div id="player2" class="player playerspace">
+			<div id="cardspace">
+				<ul id="colours" data-bind="foreach:colours">
+					<li data-bind="class:'colour' + $data"></li>
+				</ul>
+				<ul id="numbers" data-bind="foreach:you.cardCounts">
+					<li><p data-bind="text:$data"></p></li>
+				</ul>
+			</div>
+			<div class="label" data-bind="text:you.points() + ' pts'"></div>
+		</div>
+		<div id="scoreoverlay">
+			<h1>Game Over</h1>
+			<h2 data-bind="text:result"></h2>
+		</div>
+		<div id="menu">
+			<ul>
+				<li>ncolour</li>
+				<li class="button">
+					<a href="javascript:game_step(true)">&#9670;</a>
+				</li>
+			</ul>
+		</div>
+		<script type='text/javascript' src='js/knockout-2.2.0.js'></script>
+		<script type='text/javascript' src='js/knockout-patches.js'></script>
+		<script type='text/javascript' src='js/app.js'></script>
+	</div>
+	<div id="footer">built by <a href="http://greenlay.net">@sgreenlay</a> at <a href="http://sehackday.com">#sehackday</a> 8</div>
+</body>
+</html>
