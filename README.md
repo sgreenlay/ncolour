@@ -13,3 +13,7 @@ Rules
         - The players discards their chosen cards. If the 'lie' was true they only discard 1 card, if not they discard 2 cards.
         - If both players play different truths, they score based on value of the colour. However, if both players choose the same 'truth', neither gains points and the point values rotate (highest value becomes least and every other increases to the next value).
 - The game ends when one player runs out of cards
+
+Todo
+-
+The eventual goal is to make this a multiplayer game and 'lie' to your friends
