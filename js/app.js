@@ -128,6 +128,7 @@ function play_lie(card) {
 function play_truth(card) {
 	if (model.me.canRemoveCard(card)) {
 		model.me.updateTruth(card);
+		game_step(false);
 	}
 }
 
@@ -137,7 +138,6 @@ function play(card) {
 	}
 	else {
 		play_truth(card);
-		game_step(false);
 	}
 }
 
